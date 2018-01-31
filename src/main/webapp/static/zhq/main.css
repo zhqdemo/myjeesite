@@ -1,0 +1,35 @@
+/*icon选择*/
+.icon-select{
+	display: block;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+.icon-select img{
+	width: 100%;
+	height: 100%;
+}
+.icon-select .oper-upload{
+	position: absolute;
+	top: 100%;
+	left:0;
+	transition: all 0.3s;
+	background: #ccc;
+	opacity: 0.5;
+	font-size: 40px;
+	padding-top:30%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #000;
+}
+.icon-select:HOVER .oper-upload{
+	top: 0;
+	transition: all 0.3s;
+}
+.click-icon{
+	cursor: pointer;
+}
+/*end icon选择*/

@@ -73,7 +73,9 @@
 			<#elseif c.showType == "fileselect">
 				<form:hidden id="${c.simpleJavaField}" path="${c.javaFieldId}" htmlEscape="false"<#if c.dataLength != "0"> maxlength="${c.dataLength}"</#if> class="input-xlarge"/>
 				<sys:ckfinder input="${c.simpleJavaField}" type="files" uploadPath="/${moduleName}<#if subModuleName != "">/${subModuleName}</#if>/${className}" selectMultiple="true"/>
-			</#if>
+			<#elseif c.showType == "imageupload">
+				<zhq:imageupload name="${c.javaFieldId}" id="${"$"}{${className}.id}" icon="${"$"}{${className}.${c.javaFieldId}}"  cssClass="icon-vedio"></zhq:imageupload>
+			</#if>			
 			<#if c.isNull != "1">
 				<span class="help-inline"><font color="red">*</font> </span>
 			</#if>

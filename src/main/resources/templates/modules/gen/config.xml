@@ -76,5 +76,6 @@
 		<dict value="areaselect" label="区域选择"/>
 		<dict value="treeselect" label="树选择控件"/>
 		<dict value="fileselect" label="文件上传选择"/>
+		<dict value="imageupload" label="图片上传"/>
 	</showType>
 </config>
