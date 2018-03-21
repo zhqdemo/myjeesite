@@ -18,6 +18,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.project.util.Encrypt;
 import com.project.util.ResultBean;
 import com.project.util.StringUtil;
+import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.utils.DateUtils;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.thinkgem.jeesite.common.utils.SystemPath;
@@ -28,8 +29,12 @@ public class FileController extends BaseController {
 	
 	@RequestMapping(value = "imageFileUpload")
 	public @ResponseBody ResultBean fileUpload(@RequestParam("file") CommonsMultipartFile[] files,HttpServletRequest request){
-		String fileP = SystemPath.getSysPath()+"filetemp"+SystemPath.getSeparator()+DateUtils.getYear()+SystemPath.getSeparator();//文件物理路径
-		String fileUrl = "filetemp/"+DateUtils.getYear()+"/";//文件url访问路径
+		//String fileP = SystemPath.getSysPath()+"filetemp"+SystemPath.getSeparator()+DateUtils.getYear()+SystemPath.getSeparator();//文件物理路径
+		//String fileUrl = "filetemp/"+DateUtils.getYear()+"/";//文件url访问路径
+		//更改为
+		String fileP = Global.getConfig("resource.path")+"/"+DateUtils.getYear()+"/";
+		//String fileUrl = Global.getConfig("resource.url")+"/"+DateUtils.getYear()+"/";//文件url访问路径
+		String fileUrl = DateUtils.getYear()+"/";//文件url访问路径
 		System.out.println(fileP);
 		//文件夹是否存在
 		File folder	 = new File(fileP);

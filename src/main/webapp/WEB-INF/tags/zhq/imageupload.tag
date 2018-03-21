@@ -12,7 +12,7 @@
 <input id="icon-upload-${id }" type="file" style="display: none"  onchange="icon_${id}_Selected();"/>
 <span id="icon-${id}" class="icon-select ${cssClass } ${cssClass}">
 	<span class="oper-upload icon-plus" onclick="imgIcon_${id}(this)"></span>
-	<img id="icon-img-${id }" class="" alt="" src="${path}${icon }" onerror="this.src='${ctxStatic}/images/default.png'" />
+	<img id="icon-img-${id }" class="" alt="" src="${resourcepath}${icon }" onerror="this.src='${ctxStatic}/images/default.png'" />
 </span>
 <script>
 var icon_overUpdata_${id} = true;
@@ -71,7 +71,7 @@ function icon_${id}_Selected(){
 }
 function addIcon_${id}(data){
 	console.log(data);
-	$("#icon-img-${id }").prop("src","${path}"+data.img);
+	$("#icon-img-${id }").prop("src","${resourcepath}"+data.img);
 	$("#icon-name-${id }").val(data.img);
 }
 </script>
